@@ -107,7 +107,6 @@ $(document).ready(function() {
     }
   };
 
-
   window.onload = function() {
     var cdown = new CDown();
 
@@ -116,17 +115,46 @@ $(document).ready(function() {
 
   function initialize() {
     var mapCanvas = document.getElementById('map');
+    var location = new google.maps.LatLng(46.761595, 17.343054);
     var mapOptions = {
-      center: new google.maps.LatLng(47.496429, 19.039545),
+      center: location,
       zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      maxZoom: 17,
+      draggable: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+
     }
     var map = new google.maps.Map(mapCanvas, mapOptions);
-     var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(47.496429, 19.039545),
-    map: map,
-    title: 'Hello World!'
-  });
+
+    var infowindow = new google.maps.InfoWindow({
+      content: '8313 Balatongyörök, Zsölleháti Dűlő 9.'
+    });
+
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: 'Osztálytalálkozó'
+    });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
+
+  var loaded = false;
+
+  $(document).scroll(function() {
+    if (!loaded && $(document).scrollTop() > 140) {
+      initialize();
+      loaded = true;
+    }
+  })
+  $('#down').click(function() {
+    var body = $("html, body");
+    body.stop().animate({
+      scrollTop: 600
+    }, '5000', 'swing');
+  });
+  google.maps.event.addDomListener(document, 'load', initialize);
 });

@@ -11,7 +11,7 @@ body {
         font-size: 7px;
     }
     @media screen and (max-width: 600px) {
-        font-size: 7px;
+        font-size: 5px;
     }
 }
 
@@ -25,11 +25,14 @@ body {
         width: 100%;
         height: 100%;
         display: table;
-        background-color: rgba(29, 139, 139, 0.85);
+        background-color: rgba(0, 0, 0, .75);
         .container {
-        	.header-txt {
-        		color: #ccc;
-        	}
+            .row {
+                padding: 20px;
+            }
+            .header-txt {
+                color: #ccc;
+            }
             #countbox1 {
                 text-transform: uppercase;
                 color: white;
@@ -44,12 +47,70 @@ body {
     }
 }
 
+@-webkit-keyframes bounce {
+    0% {
+        -ms-transform: rotate(-90deg) translate(0px, 0px);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg) translate(0px, 0px);
+        /* Safari */
+        transform: rotate(-90deg) translate(0px, 0px);
+
+    }
+    50% {
+        -ms-transform: rotate(-90deg) translate(10px, 0px);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg) translate(10px, 0px);
+        /* Safari */
+        transform: rotate(-90deg) translate(10px, 0px);
+    }
+    100% {
+        -ms-transform: rotate(-90deg) translate(0px, 0px);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg) translate(0px, 0px);
+        /* Safari */
+        transform: rotate(-90deg) translate(0px, 0px);
+    }
+}
+@arrow-width: 36px;
+.arrow-wr {
+    width: @arrow-width;
+    position: absolute;
+    bottom: 10px;
+    left: auto;
+    left: calc(50% ~"-" @arrow-width / 2);
+    cursor: pointer;
+    -webkit-animation: bounce 1.3s infinite;
+    /* Safari 4+ */
+    -moz-animation: bounce 1.3s infinite;
+    /* Fx 5+ */
+    -o-animation: bounce 1.3s infinite;
+    /* Opera 12+ */
+    animation: bounce 1.3s infinite;
+    /* IE 10+, Fx 29+ */
+    &:hover {
+        .arrow {
+            fill: rgba(197, 197, 197, 0.75);
+        }
+    }
+}
+
+.arrow {
+    fill: rgba(197, 197, 197, 0.52);
+    transition: all .5s ease;
+}
+
 .map-header {
     font-family: 'Oswald', sans-serif;
     text-align: center;
     padding: 30px;
     font-size: 50px;
     font-size: 5rem;
+    cursor: default;
+    background-color: #F5F5F5;
+    .row {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
 }
 
 #map {
