@@ -9,7 +9,6 @@ $(document).ready(function() {
     this.counts = []; // array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox1"}
     this.interval = null; // setInterval object
   }
-
   CDown.prototype = {
     init: function() {
       this.state = 1;
@@ -28,20 +27,16 @@ $(document).ready(function() {
     },
     expire: function(idxs) {
       for (var x in idxs) {
-        this.display(this.counts[idxs[x]], "Now!");
+        this.display(this.counts[idxs[x]], "Most!");
         this.counts.splice(idxs[x], 1);
       }
     },
     format: function(r) {
-      var out = "";
-      if (r.d != 0) {
-        out += (r.d <= 9 ? '0' : '') + r.d + " " + ((r.d == 1) ? "nap" : "nap") + ", ";
-      }
-      if (r.h != 0) {
-        out += (r.h <= 9 ? '0' : '') + r.h + " " + ((r.h == 1) ? "óra" : "óra") + ", ";
-      }
-      out += r.m + " " + ((r.m == 1) ? "perc" : "perc") + ", ";
-      out += r.s + " " + ((r.s == 1) ? "másodperc" : "másodperc") + ", ";
+      var out = '';
+      out += '<div class="time-wr day"><span>' + r.d + '</span><span class="time-unit">Nap</span></div>';
+      out += '<div class="time-wr hour"><span>' + r.h + '</span><span class="time-unit">Óra</span></div>';
+      out += '<div class="time-wr min"><span>' + r.m + '</span><span class="time-unit">Perc</span></div>';
+      out += '<div class="time-wr sec"><span>' + r.s + '</span><span class="time-unit">Másodperc</span></div>';
 
       return out.substr(0, out.length - 2);
     },
@@ -92,6 +87,8 @@ $(document).ready(function() {
           // date is still good
           else {
             this.display(cnt, this.format(this.math(amount)));
+
+
           }
         }
 
@@ -120,6 +117,7 @@ $(document).ready(function() {
       center: location,
       zoom: 16,
       maxZoom: 17,
+      scrollwheel: false,
       draggable: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
 
@@ -143,17 +141,31 @@ $(document).ready(function() {
   }
 
   var loaded = false;
+  var isTop = $(document).scrollTop() <= 10;
+  var logo = $($('.logo')[0]);
+
+  if (isTop) {
+    logo.addClass('top');
+  }
 
   $(document).scroll(function() {
     if (!loaded && $(document).scrollTop() > 140) {
       initialize();
       loaded = true;
     }
+    if (isTop && $(document).scrollTop() > 10) {
+      isTop = false;
+      logo.removeClass('top');
+    } else if (!isTop && $(document).scrollTop() <= 10) {
+      isTop = true;
+      logo.addClass('top');
+    }
+
   })
   $('#down').click(function() {
     var body = $("html, body");
     body.stop().animate({
-      scrollTop: 600
+      scrollTop: 620
     }, '5000', 'swing');
   });
   google.maps.event.addDomListener(document, 'load', initialize);

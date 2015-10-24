@@ -4,24 +4,101 @@ body {
   padding: 0;
   margin: 0;
   font-size: 10px;
+  cursor: default;
 }
 @media screen and (max-width: 1024px) {
   html,
   body {
-    font-size: 8px;
+    font-size: 9px;
   }
 }
 @media screen and (max-width: 820px) {
   html,
   body {
-    font-size: 7px;
+    font-size: 8px;
   }
 }
 @media screen and (max-width: 600px) {
   html,
   body {
-    font-size: 5px;
+    font-size: 7px;
   }
+}
+.site-header {
+  position: fixed;
+  height: 65px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 97, 59, 0.88);
+  z-index: 999;
+  padding-left: 40px;
+}
+.site-header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  background-color: #3f14c3;
+}
+.site-header .logo {
+  display: inline-block;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.88);
+  border-bottom: 3px solid #3f14c3;
+  transition: all .2s ease;
+}
+.site-header .logo.top {
+  transform: scale(1.2) translateY(5px) translateX(-5px);
+}
+.site-header .logo .flask-logo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 6px;
+}
+.site-header .logo .flask-logo path {
+  fill: #3f14c3;
+}
+.site-header .info {
+  display: inline-block;
+  font-family: 'Sanchez', serif;
+  font-size: 20px;
+  margin-left: 6px;
+  color: white;
+  line-height: 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+.site-header .info span {
+  display: block;
+}
+.site-header .info .year {
+  font-family: 'Lobster', cursive;
+  text-align: right;
+  position: relative;
+  left: 10px;
+}
+.site-header:hover .logo .flask-logo {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.go-to-google {
+  background-image: url("../Google_logo.png");
+  background-size: 62px;
+  background-position: center;
+  width: 100px;
+  background-repeat: no-repeat;
+  height: 32px;
+  display: inline-block;
+  opacity: .8;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  position: absolute;
+  top: 16px;
+  right: 57px;
+  display: none;
+}
+.go-to-google:hover {
+  opacity: .9;
 }
 .header-wr {
   height: 100%;
@@ -41,8 +118,54 @@ body {
   text-align: center;
   vertical-align: middle;
 }
+.header-wr .header .container .title {
+  font-family: 'Lobster', cursive;
+  font-size: 6rem;
+  color: #E6E6E6;
+}
+.header-wr .header .container .title:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  border-top: 2px solid #3f14c3;
+  bottom: 0;
+  width: 14rem;
+}
+.header-wr .header .container .count-wr .only {
+  font-family: 'Sanchez', serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #DADADA;
+  position: relative;
+  top: 8px;
+}
+.header-wr .header .container .count-wr .only:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  border-top: 2px solid #3f14c3;
+  bottom: 0;
+  width: 33rem;
+  margin-top: 6px;
+}
 .header-wr .header .container .row {
   padding: 20px;
+}
+.header-wr .header .container .row .time-wr {
+  border: 3px solid #e96546;
+  border-radius: 50%;
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  font-size: 45px;
+  box-sizing: border-box;
+  padding: 18px;
+}
+.header-wr .header .container .row .time-wr .time-unit {
+  display: block;
+  font-size: 12px;
+  position: relative;
+  bottom: 6px;
 }
 .header-wr .header .container .header-txt {
   color: #ccc;
@@ -51,31 +174,9 @@ body {
   text-transform: uppercase;
   color: white;
   font-size: 72px;
-  font-size: 8rem;
+  font-size: 4rem;
   font-family: 'Open Sans Condensed', sans-serif;
-}
-@-webkit-keyframes bounce {
-  0% {
-    -ms-transform: rotate(-90deg) translate(0px, 0px);
-    /* IE 9 */
-    -webkit-transform: rotate(-90deg) translate(0px, 0px);
-    /* Safari */
-    transform: rotate(-90deg) translate(0px, 0px);
-  }
-  50% {
-    -ms-transform: rotate(-90deg) translate(10px, 0px);
-    /* IE 9 */
-    -webkit-transform: rotate(-90deg) translate(10px, 0px);
-    /* Safari */
-    transform: rotate(-90deg) translate(10px, 0px);
-  }
-  100% {
-    -ms-transform: rotate(-90deg) translate(0px, 0px);
-    /* IE 9 */
-    -webkit-transform: rotate(-90deg) translate(0px, 0px);
-    /* Safari */
-    transform: rotate(-90deg) translate(0px, 0px);
-  }
+  font-family: 'Sanchez', serif;
 }
 .arrow-wr {
   width: 36px;
@@ -100,8 +201,9 @@ body {
   fill: rgba(197, 197, 197, 0.52);
   transition: all .5s ease;
 }
-.map-header {
-  font-family: 'Oswald', sans-serif;
+.map-header,
+.site-footer {
+  font-family: 'Lobster', cursive;
   text-align: center;
   padding: 30px;
   font-size: 50px;
@@ -109,11 +211,123 @@ body {
   cursor: default;
   background-color: #F5F5F5;
 }
-.map-header .row {
-  border-bottom: 1px solid #ccc;
+.map-header .row,
+.site-footer .row {
   padding-bottom: 5px;
+}
+.map-header .row .title-text:after,
+.site-footer .row .title-text:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  border-top: 2px solid #3f14c3;
+  bottom: 0;
+  width: 14rem;
+}
+.site-footer {
+  padding: 100px;
+  color: #E6E6E6;
+  background: #100f14;
+  background: -moz-linear-gradient(left, #100f14 0%, #1c1142 69%, #130445 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #100f14), color-stop(69%, #1c1142), color-stop(100%, #130445));
+  background: -webkit-linear-gradient(left, #100f14 0%, #1c1142 69%, #130445 100%);
+  background: -o-linear-gradient(left, #100f14 0%, #1c1142 69%, #130445 100%);
+  background: -ms-linear-gradient(left, #100f14 0%, #1c1142 69%, #130445 100%);
+  background: linear-gradient(to right, #100f14 0%, #1c1142 69%, #130445 100%);
+}
+.site-footer .date {
+  font-family: 'Sanchez', serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #DADADA;
+  position: relative;
+  bottom: 8px;
 }
 #map {
   width: 100%;
-  height: 50%;
+  height: 70%;
+}
+@keyframes bounce {
+  0% {
+    -ms-transform: rotate(-90deg) translate(0px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(0px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(0px, 0px);
+  }
+  50% {
+    -ms-transform: rotate(-90deg) translate(10px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(10px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(10px, 0px);
+  }
+  100% {
+    -ms-transform: rotate(-90deg) translate(0px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(0px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(0px, 0px);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -ms-transform: rotate(-90deg) translate(0px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(0px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(0px, 0px);
+  }
+  50% {
+    -ms-transform: rotate(-90deg) translate(10px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(10px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(10px, 0px);
+  }
+  100% {
+    -ms-transform: rotate(-90deg) translate(0px, 0px);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg) translate(0px, 0px);
+    /* Safari */
+    transform: rotate(-90deg) translate(0px, 0px);
+  }
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(2deg);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(-2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0) rotate(2deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0) rotate(-2deg);
+  }
+}
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(2deg);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(-2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0) rotate(2deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0) rotate(-2deg);
+  }
 }
