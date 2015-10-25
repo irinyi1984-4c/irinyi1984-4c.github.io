@@ -161,12 +161,30 @@ $(document).ready(function() {
       header.addClass('top');
     }
 
-  })
+  });
+
+  function shakeFlaskInRandomTime() {
+    var randomTime = Math.random() * 10000;
+    setTimeout(function() {
+      header.addClass('hover');
+      setTimeout(function() {
+        header.removeClass('hover');
+      }, 1000)
+    }, randomTime)
+  }
+
+  shakeFlaskInRandomTime();
+
+  setInterval(function() {
+   shakeFlaskInRandomTime();
+  }, 20000);
+
   $('#down').click(function() {
     var body = $("html, body");
     body.stop().animate({
       scrollTop: 620
     }, '5000', 'swing');
   });
+
   google.maps.event.addDomListener(document, 'load', initialize);
 });

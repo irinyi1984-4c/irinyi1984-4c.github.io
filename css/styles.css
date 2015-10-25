@@ -104,7 +104,8 @@ body {
   position: relative;
   left: 10px;
 }
-.site-header:hover .logo .flask-logo {
+.site-header:hover .logo .flask-logo,
+.site-header.hover .logo .flask-logo {
   animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 .go-to-google {
