@@ -182,7 +182,7 @@ $(document).ready(function() {
   $('#down').click(function() {
     var body = $("html, body");
     body.stop().animate({
-      scrollTop: 620
+      scrollTop: $('.map-header').offset().top - $('.site-header').height()
     }, '5000', 'swing');
   });
 
