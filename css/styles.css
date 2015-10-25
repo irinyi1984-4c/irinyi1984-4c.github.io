@@ -250,6 +250,10 @@ body {
   bottom: 0;
   width: 14rem;
 }
+.map-header .row .title-text.soon:after,
+.site-footer .row .title-text.soon:after {
+  border-top-color: #e84855;
+}
 .site-footer {
   padding: 100px;
   color: #E6E6E6;
