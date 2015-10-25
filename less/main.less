@@ -219,32 +219,35 @@
             }
         }
         
-        @arrow-width: 36px;
-        .arrow-wr {
-            width: @arrow-width;
-            position: absolute;
+        #down {
+            @arrow-width: 36px;
             bottom: 10px;
-            left: auto;
-            left: calc(50% ~"-" @arrow-width / 2);
-            cursor: pointer;
-            -webkit-animation: bounce 1.3s infinite;
-            /* Safari 4+ */
-            -moz-animation: bounce 1.3s infinite;
-            /* Fx 5+ */
-            -o-animation: bounce 1.3s infinite;
-            /* Opera 12+ */
-            animation: bounce 1.3s infinite;
-            /* IE 10+, Fx 29+ */
-            &:hover {
+            position: absolute;
+            margin: 0 auto;
+            width: 100%;
+            .arrow-wr {
+                width: @arrow-width;
+                left: auto;
+                left: calc(50% ~"-" @arrow-width / 2);
+                cursor: pointer;
+                -webkit-animation: bounce 1.3s infinite;
+                /* Safari 4+ */
+                -moz-animation: bounce 1.3s infinite;
+                /* Fx 5+ */
+                -o-animation: bounce 1.3s infinite;
+                /* Opera 12+ */
+                animation: bounce 1.3s infinite;
+                /* IE 10+, Fx 29+ */
                 .arrow {
-                    fill: rgba(197, 197, 197, 0.75);
+                    fill: rgba(197, 197, 197, 0.52);
+                    transition: all .5s ease;
+                }
+                &:hover {
+                    .arrow {
+                        fill: rgba(197, 197, 197, 0.75);
+                    }
                 }
             }
-        }
-        
-        .arrow {
-            fill: rgba(197, 197, 197, 0.52);
-            transition: all .5s ease;
         }
         
         .map-header,

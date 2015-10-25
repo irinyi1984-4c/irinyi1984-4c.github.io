@@ -205,10 +205,14 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Sanchez', serif;
 }
-.arrow-wr {
-  width: 36px;
-  position: absolute;
+#down {
   bottom: 10px;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+}
+#down .arrow-wr {
+  width: 36px;
   left: auto;
   left: calc(50% - 18px);
   cursor: pointer;
@@ -221,12 +225,12 @@ body {
   animation: bounce 1.3s infinite;
   /* IE 10+, Fx 29+ */
 }
-.arrow-wr:hover .arrow {
-  fill: rgba(197, 197, 197, 0.75);
-}
-.arrow {
+#down .arrow-wr .arrow {
   fill: rgba(197, 197, 197, 0.52);
   transition: all .5s ease;
+}
+#down .arrow-wr:hover .arrow {
+  fill: rgba(197, 197, 197, 0.75);
 }
 .map-header,
 .site-footer {
