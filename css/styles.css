@@ -45,7 +45,7 @@ body {
 .site-header .logo {
   display: inline-block;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.88);
+  background-color: #F5F5F5;
   border-bottom: 3px solid #3f14c3;
   transition: all .2s ease;
 }
