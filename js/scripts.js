@@ -142,10 +142,10 @@ $(document).ready(function() {
 
   var loaded = false;
   var isTop = $(document).scrollTop() <= 10;
-  var logo = $($('.logo')[0]);
+  var header = $($('.site-header')[0]);
 
   if (isTop) {
-    logo.addClass('top');
+    header.addClass('top');
   }
 
   $(document).scroll(function() {
@@ -155,10 +155,10 @@ $(document).ready(function() {
     }
     if (isTop && $(document).scrollTop() > 10) {
       isTop = false;
-      logo.removeClass('top');
+      header.removeClass('top');
     } else if (!isTop && $(document).scrollTop() <= 10) {
       isTop = true;
-      logo.addClass('top');
+      header.addClass('top');
     }
 
   })

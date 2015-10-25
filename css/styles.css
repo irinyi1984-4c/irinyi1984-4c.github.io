@@ -31,26 +31,42 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(255, 97, 59, 0.88);
-  background-color: #e55938;
+  background-color: #110F18;
   z-index: 999;
-  padding-left: 40px;
+  transition: all .25s ease;
 }
 .site-header:after {
+  width: 0%;
   content: "";
   display: block;
-  position: absolute;
-  height: 100%;
-  background-color: #3f14c3;
+  margin: 0 auto;
+  border-top: 2px solid #e84855;
+  bottom: 2px;
+  transition: all .25s ease;
+  z-index: 1;
+  position: relative;
+}
+.site-header.top {
+  background-color: transparent;
+}
+.site-header.top:after {
+  width: 80%;
+}
+.site-header.top .info:after {
+  width: 17rem;
+}
+.site-header.top .logo {
+  transform: scale(1.2) translateY(5px) translateX(-5px);
 }
 .site-header .logo {
   display: inline-block;
   height: 100%;
   background-color: #F5F5F5;
-  border-bottom: 3px solid #3f14c3;
+  border-bottom: 2px solid #e84855;
   transition: all .2s ease;
-}
-.site-header .logo.top {
-  transform: scale(1.2) translateY(5px) translateX(-5px);
+  margin-left: 40px;
+  position: relative;
+  z-index: 0;
 }
 .site-header .logo .flask-logo {
   width: 50px;
@@ -59,7 +75,7 @@ body {
   top: 6px;
 }
 .site-header .logo .flask-logo path {
-  fill: #3f14c3;
+  fill: #e84855;
 }
 .site-header .info {
   display: inline-block;
@@ -69,6 +85,15 @@ body {
   color: white;
   line-height: 20px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+.site-header .info:after {
+  display: block;
+  margin: 0 auto;
+  border-top: 2px solid #3f14c3;
+  position: absolute;
+  bottom: 0;
+  width: 0rem;
+  transition: all .25s ease;
 }
 .site-header .info span {
   display: block;
@@ -153,7 +178,7 @@ body {
   padding: 20px;
 }
 .header-wr .header .container .row .time-wr {
-  border: 3px solid #e96546;
+  border: 3px solid #e84855;
   border-radius: 50%;
   display: inline-block;
   width: 140px;
