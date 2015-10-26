@@ -169,7 +169,7 @@ $(document).ready(function() {
       header.addClass('hover');
       setTimeout(function() {
         header.removeClass('hover');
-      }, 1000)
+      }, 2000)
     }, randomTime)
   }
 
