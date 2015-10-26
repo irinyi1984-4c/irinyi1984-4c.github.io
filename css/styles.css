@@ -130,6 +130,7 @@ body {
 .site-header:hover .logo .flask-logo path,
 .site-header.hover .logo .flask-logo path {
   transition: all 1s linear;
+  opacity: .6;
 }
 .go-to-google {
   background-image: url("../Google_logo.png");
