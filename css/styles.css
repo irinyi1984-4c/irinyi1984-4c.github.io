@@ -75,6 +75,7 @@ body {
   top: 6px;
 }
 .site-header .logo .flask-logo path {
+  transition: all .5s ease;
   fill: #3f14c3;
 }
 .site-header .info {
@@ -107,6 +108,11 @@ body {
 .site-header:hover .logo .flask-logo,
 .site-header.hover .logo .flask-logo {
   animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+.site-header:hover .logo .flask-logo path,
+.site-header.hover .logo .flask-logo path {
+  transition: all 1s linear;
+  fill: #110F18;
 }
 .go-to-google {
   background-image: url("../Google_logo.png");

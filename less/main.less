@@ -76,6 +76,7 @@
                     position: relative;
                     top: 6px;
                     path {
+                        transition: all .5s ease;
                         fill: @sec-color;
                     }
                 }
@@ -113,6 +114,10 @@
                 .logo {
                     .flask-logo {
                         animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+                        path {
+                            transition: all 1s linear;
+                            fill: #110F18;
+                        }
                     }
                 }
             }
