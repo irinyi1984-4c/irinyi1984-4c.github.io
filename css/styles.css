@@ -80,7 +80,7 @@ body {
   display: inline-block;
   height: 100%;
   background-color: #F5F5F5;
-  border-bottom: 2px solid #e96546;
+  border: 2px solid #e96546;
   transition: all .2s ease;
   margin-left: 40px;
   position: relative;
