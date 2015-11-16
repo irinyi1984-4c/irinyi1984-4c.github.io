@@ -160,7 +160,6 @@ $(document).ready(function() {
       isTop = true;
       header.addClass('top');
     }
-
   });
 
   function shakeFlaskInRandomTime() {
