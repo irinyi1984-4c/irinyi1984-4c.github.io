@@ -107,7 +107,7 @@ $(document).ready(function() {
   window.onload = function() {
     var cdown = new CDown();
 
-    cdown.add(new Date(2016, 4, 26, 23, 59, 59), "countbox1");
+    cdown.add(new Date(2016, 4, 27, 16, 0, 0), "countbox1");
   };
 
   function initialize() {

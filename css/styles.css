@@ -58,7 +58,7 @@ body {
   content: "";
   display: block;
   margin: 0 auto;
-  border-top: 2px solid #e55938;
+  border-top: 2px solid #e96546;
   bottom: 2px;
   transition: all .25s ease;
   z-index: 1;
@@ -80,7 +80,7 @@ body {
   display: inline-block;
   height: 100%;
   background-color: #F5F5F5;
-  border-bottom: 2px solid #e55938;
+  border-bottom: 2px solid #e96546;
   transition: all .2s ease;
   margin-left: 40px;
   position: relative;
@@ -203,7 +203,7 @@ body {
   padding: 20px;
 }
 .header-wr .header .container .row .time-wr {
-  border: 3px solid #e55938;
+  border: 3px solid #e96546;
   border-radius: 50%;
   display: inline-block;
   width: 140px;
@@ -281,7 +281,7 @@ body {
 }
 .map-header .row .title-text.soon:after,
 .site-footer .row .title-text.soon:after {
-  border-top-color: #e55938;
+  border-top-color: #e96546;
 }
 .site-footer {
   padding: 100px;
